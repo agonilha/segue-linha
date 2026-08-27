@@ -1,29 +1,3 @@
-/* =========================================================
- * CDR CAR - SEGUIDOR DE LINHA OTIMIZADO - VERSAO EM C PURO (AVR-GCC)
- * Microcontrolador: ATmega328 (Placa UNO SMD R3 do kit CDR CAR)
- * Hardware: Shield Ponte H L298P + Modulo Seguidor de Linha 3x TCRT5000
- *           (saida digital via LM393) + 2x Motor DC 3-6V, reducao 48:1
- *           + Alimentacao 6 pilhas AA
- *
- * Esta versao NAO usa o framework Arduino (sem pinMode, digitalRead,
- * analogWrite etc.). Todo o controle e feito por escrita direta nos
- * registradores do ATmega328, usando o compilador AVR-GCC.
- *
- * Mapeamento de pinos Arduino -> ATmega328 usado no kit CDR CAR:
- *   Pino digital 5  (sensor esquerdo) -> PD5
- *   Pino digital 6  (sensor centro)   -> PD6
- *   Pino digital 7  (sensor direito)  -> PD7
- *   Pino digital 10 (PWM motor A)     -> PB2 (OC1B - Timer1)
- *   Pino digital 11 (PWM motor B)     -> PB3 (OC2A - Timer2)
- *   Pino digital 12 (EN motor A)      -> PB4
- *   Pino digital 13 (EN motor B)      -> PB5
- *
- * Compilar (exemplo via avr-gcc para ATmega328 a 16MHz):
- *   avr-gcc -mmcu=atmega328p -DF_CPU=16000000UL -Os -o seguidor.elf seguidor.c
- *   avr-objcopy -O ihex seguidor.elf seguidor.hex
- *   avrdude -c arduino -p atmega328p -P COMx -b 115200 -U flash:w:seguidor.hex
- * ========================================================= */
-
 #include <avr/io.h>
 #include <stdint.h>
 
