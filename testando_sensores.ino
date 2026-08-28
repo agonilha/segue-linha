@@ -6,7 +6,6 @@ int sensoresquerdo = 5; //Pino do sensor TCRT esquerdo
 
 void setup() {
     Serial.begin(9600); //Inicializa a comunicação serial
-    //Configura sensores como entrada (INPUT)
     pinMode(sensordireito, INPUT);
     pinMode(sensorcentro, INPUT);
     pinMode(sensoresquerdo, INPUT);
