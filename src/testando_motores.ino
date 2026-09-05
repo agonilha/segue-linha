@@ -5,7 +5,7 @@ int motorB_PWM = 11; //Controle de velocidade do motor B (Direito)
 int motorA_EN = 12; //Controle de direção do motor A (Esquerdo)
 int motorB_EN = 13; //Controle de direção do motor B (Direito)
 
-int velocidade = 30; //Velocidade de rotação do motor de 0 (velocidade mínima) a 255(velocidade máxima)
+int velocidade = 127; //Velocidade de rotação do motor de 0 (velocidade mínima) a 255(velocidade máxima)
 
 void setup() {
     //Configura pinos de saída (OUTPUT)
