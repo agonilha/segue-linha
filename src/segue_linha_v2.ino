@@ -45,14 +45,12 @@ void leitura() {
 
 void seguidor() {
     // Linha no meio ou em todos os sensores
-    if (leituraCentro == 1) {
+    if (leituraDireito == 1) {
+        direita(180);
+    } else if (leituraCentro == 1) {
         frente(180);
-    } else if (leituraDireito == 1 && leituraEsquerdo == 0) {
-        direita(180);
-    } else if (leituraEsquerdo == 1 && leituraDireito == 0) {
+    } else if (leituraEsquerdo == 1) {
         esquerda(180);
-    } else if (leituraDireito == 1 && leituraEsquerdo == 1) {
-        direita(180);
     }
 }
 
