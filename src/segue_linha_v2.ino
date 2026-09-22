@@ -45,12 +45,14 @@ void leitura() {
 
 void seguidor() {
     // Linha no meio ou em todos os sensores
-    if (leituraDireito == 1) {
-        direita(180);
-    } else if (leituraCentro == 1) {
-        frente(180);
+    if (leituraCentro == 1) {
+        frente(130);
+    } else if (leituraDireito == 1) {
+        direita(130);
     } else if (leituraEsquerdo == 1) {
-        esquerda(180);
+        esquerda(130);
+    } else if (leituraDireito == 1 && leituraCentro == 0 && leituraEsquerdo == 1) {
+        direita(130);
     }
 }
 
@@ -82,7 +84,7 @@ void esquerda(int velocidade) {
     digitalWrite(MOTOR_A_DIR_1, HIGH);
     digitalWrite(MOTOR_A_DIR_2, LOW);
     analogWrite(MOTOR_A_PWM, velocidade);
-    
+
     // Motor B parado
     digitalWrite(MOTOR_B_DIR_1, LOW);
     digitalWrite(MOTOR_B_DIR_2, LOW);
